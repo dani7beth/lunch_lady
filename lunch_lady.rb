@@ -39,8 +39,8 @@ mains.print_order
 sides.print_order
 
 #computer totals order
-
+mains_total = mains.total_order 
+sides_total = sides.total_order
 
 #computer displays total
-
-#create a side dish menu
+puts "Your total is: $#{mains_total + sides_total}"

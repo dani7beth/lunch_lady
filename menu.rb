@@ -6,6 +6,7 @@ class Menu
     def initialize(menu)
         @menu = menu
         @selections = []
+        @selected_prices = []
     end
 
     #print main dish menu
@@ -42,6 +43,7 @@ class Menu
         if selection >= 1 && selection <= option_size
             puts "You selected: #{@menu[:options][0][:dish][selection-1]}"
             @selections.push(@menu[:options][0][:dish][selection-1])
+            @selected_prices.push(@menu[:options][0][:price][(selection-1).to_f])
         else
             puts "#{selection} needs to be between 1 and #{option_size}, please try again"
             self.get_selection
@@ -61,6 +63,13 @@ class Menu
     end
 
     #total the order cost
+    def total_order
+        total = 0
+        @selected_prices.each do |cost|
+            total += cost
+        end
+       total
+    end
     #print the total
 
 end
