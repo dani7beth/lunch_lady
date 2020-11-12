@@ -24,15 +24,22 @@ sides = Menu.new(side_dish_menu)
 mains.print_menu
 
 #user select main dish
+mains.get_selection
 
 #call print menu for side dish
 sides.print_menu
 
 #user select side dishes
+sides.get_selection
+sides.get_selection
 
 #computer displays order
+puts "You ordered: "
+mains.print_order
+sides.print_order
 
 #computer totals order
+
 
 #computer displays total
 
