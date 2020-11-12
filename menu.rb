@@ -21,7 +21,7 @@ class Menu
         #print the menu and keep it organized the way i want it
         @menu[:options].each do |item| #this grabs all the items in the options hash
             item[:dish].each_with_index do |item2, index| #this grabs the dish array within the option hash
-                puts "#{index+1}. #{item2} - $#{item[:price][index]}"#the item[:price][index] grabs all the prices associated with each menu item
+                puts "#{index+1}. #{item2} - $#{(item[:price][index])}"#the item[:price][index] grabs all the prices associated with each menu item
             end                              
         end
     end
@@ -43,7 +43,7 @@ class Menu
         if selection >= 1 && selection <= option_size
             puts "You selected: #{@menu[:options][0][:dish][selection-1]}"
             @selections.push(@menu[:options][0][:dish][selection-1])
-            @selected_prices.push(@menu[:options][0][:price][(selection-1).to_f])
+            @selected_prices.push((@menu[:options][0][:price][(selection-1)]).to_f)
         else
             puts "#{selection} needs to be between 1 and #{option_size}, please try again"
             self.get_selection
@@ -64,7 +64,7 @@ class Menu
 
     #total the order cost
     def total_order
-        total = 0
+        total = 0.00
         @selected_prices.each do |cost|
             total += cost
         end

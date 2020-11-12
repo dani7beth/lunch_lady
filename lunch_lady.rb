@@ -1,11 +1,17 @@
 require_relative 'menu'
 
+#Greeting
+puts " "
+puts "Welcome to Lunch! I hope you're hungry!"
+puts "How much do you have to spend?"
+input = gets.strip.to_f
+
 #create a main dish menu
 main_dish_menu ={
     message: "Please select one main dish from the list: ",
     options: [{
         dish: ['Meatloaf', 'Chicken', 'Spaghetti', 'Fishsticks', 'Grilled Cheese Sandwich'],
-        price: [6.30, 5.45, 4.50, 4.00, 3.00]
+        price: ['6.30', '5.45', '4.50', '4.00', '3.00']
     }]
 }
 mains = Menu.new(main_dish_menu)
@@ -15,10 +21,11 @@ side_dish_menu ={
     message: "Please select your side dish from the list: ",
     options: [{
         dish: ['Carrots', 'Salad', 'Beans', 'Macaroni', 'Broccoli'],
-        price: [2.00, 3.50, 1.30, 3.00, 2.45]
+        price: ['2.00', '3.50', '1.30', '3.00', '2.45']
     }]
 }
 sides = Menu.new(side_dish_menu)
+
 
 #call print menu for main dish
 mains.print_menu
@@ -44,3 +51,4 @@ sides_total = sides.total_order
 
 #computer displays total
 puts "Your total is: $#{mains_total + sides_total}"
+puts "Thank you! Come again!"
