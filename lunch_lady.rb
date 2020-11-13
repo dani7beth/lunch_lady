@@ -50,5 +50,5 @@ mains_total = mains.total_order
 sides_total = sides.total_order
 
 #computer displays total
-puts "Your total is: $#{mains_total + sides_total}"
+puts "Your total is: $#{mains_total + sides_total}" #takes the returned number and adds it together
 puts "Thank you! Come again!"
